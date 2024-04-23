@@ -55,8 +55,8 @@ function getId() {
 
 window.enterKeySearch = () => {
   if (window.event.keyCode == 13) {
-    noValue();
     filter();
+    noValue();
   }
 };
 searchButton.addEventListener("click", () => {
