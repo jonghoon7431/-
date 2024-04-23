@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  height: 8rem;
+  line-height: 8rem;
+  width: 100%;
+  background-color: #9b1112;
+  border-bottom: 1px solid white;
+  user-select: none;
+}
+.header h1 {
+  margin: auto;
+  font-size: 3.2rem;
+  text-shadow: 1px 1px 1px grey;
+}
+
+.search_area {
+  border-bottom: 1px solid white;
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  user-select: none;
+  z-index: 1000;
+}
+
+.search_input {
+  margin: 0 2rem 0 1rem;
+  width: 12rem;
+  height: 2rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.search_area button {
+  font-size: 1rem;
+  padding: 0.1rem;
+  width: 5rem;
+  height: 2.5rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.content {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 5%;
+}
+.card {
+  position: relative;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 1.5%;
+  margin: 2% 1%;
+  width: 25%;
+  height: auto;
+  font-size: 1vw;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.1);
+  transition: 0.5s all;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.title {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+.overview {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  /* height: 30%; */
+  word-break: break-all;
+}
+
+.average_div {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  justify-content: space-between;
+  bottom: 20px;
+  align-items: center;
+}
+.average {
+  flex-wrap: nowrap;
+}
+.star_icon {
+  color: yellow;
+}
+
+#movie_id {
+  display: none;
+}
