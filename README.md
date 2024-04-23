@@ -14,6 +14,7 @@
 - jQuery 라이브러리 사용없이 순수 바닐라 자바스크립트 사용하기 :heavy_check_mark:
 - TMDB 오픈 API를 이용하여 인기영화 데이터 가져오기 :heavy_check_mark:
 - 영화정보 카드 리스트 UI 구현 :heavy_check_mark:
+   - 카드 클릭시, 해당 영화 id alert 창으로 띄우기 :heavy_check_mark:
 - 영화 검색 UI 구현 :heavy_check_mark:
 - 아래 기재된 Javascript 문법 요소를 이용하여 구현 :heavy_check_mark:
   - const와 let만을 이용한 변수 선언 필수
