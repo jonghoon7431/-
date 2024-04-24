@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --red: #9b1112;
+}
 body {
   background-color: black;
   color: white;
@@ -13,7 +16,7 @@ body {
   height: 8rem;
   line-height: 8rem;
   width: 100%;
-  background-color: #9b1112;
+  background-color: var(--red);
   border-bottom: 1px solid white;
   user-select: none;
 }
@@ -112,4 +115,22 @@ body {
 
 #movie_id {
   display: none;
+}
+
+.top_button {
+  font-size: 6rem;
+  background-color: var(--red);
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 8rem;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hide {
+  opacity: 0;
 }

@@ -7,30 +7,29 @@ const options = {
 };
 
 const content = document.querySelector(".content");
-
 const searchInput = document.querySelector(".search_input");
 const searchButton = document.querySelector(".search_button");
 const title = document.querySelector(".title");
 const card = document.querySelector(".card");
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
-    .then((response) => response.json())
-    .catch((err) => console.error(err))
-    .then((response) => {
-      let data = [response][0].results;
+async function getCard() {
+  const response = await fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options);
 
-      data.forEach((a) => {
-        let id = a["id"];
-        let title = a["title"];
-        let overview = a["overview"];
-        let posterPate = a["poster_path"];
-        let average = a["vote_average"];
+  const responseJson = await response.json();
+  const results = await [responseJson][0].results;
 
-        content.insertAdjacentHTML(
-          "beforeend",
-          `
-          <div class="card" onclick="getId()">
+  try {
+    results.forEach((a) => {
+      let id = a["id"];
+      let title = a["title"];
+      let overview = a["overview"];
+      let posterPate = a["poster_path"];
+      let average = a["vote_average"];
+
+      content.insertAdjacentHTML(
+        "beforeend",
+        `
+          <div class="card" onclick="getMovieId()">
           <img src="https://image.tmdb.org/t/p/w400${posterPate}" alt="" />
           <p class="title">${title}</p>
           <div class="overview">
@@ -42,17 +41,38 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           </div>
         `
-        );
-      });
+      );
     });
-});
+  } catch (err) {
+    console.error(err);
+  }
+}
+getCard();
 
-function getId() {
+function getMovieId() {
   let dv = event.currentTarget;
   let spanId = dv.querySelector("span").textContent;
   alert(`영화 id: ${spanId}`);
 }
 
+//topbutton
+window.onload = function () {
+  const topButton = document.querySelector(".top_button");
+  topButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", () => {
+    if (this.scrollY < 400) {
+      topButton.classList.add("hide");
+    } else {
+      topButton.classList.remove("hide");
+    }
+  });
+};
+
+//엔터키입력, 버튼 검색
 window.enterKeySearch = () => {
   if (window.event.keyCode == 13) {
     filter();
@@ -69,6 +89,7 @@ function noValue() {
     alert("검색어를 입력해주세요");
   }
 }
+
 function filter() {
   let search = searchInput.value.toLowerCase();
   let card = document.getElementsByClassName("card");
