@@ -25,7 +25,7 @@
 
  
 2. 선택 요구 사항
-- css 요소 (flex,grid)  :heavy_check_mark: (flex)
+- css 요소 (flex,grid)  :heavy_check_mark: 
 - 웹사이트 랜딩 또는 새로고침 후 검색 입력란에 커서 자동 위치시키기
 - 대소문자 관계없이 검색 가능하게 하기 :heavy_check_mark:
 - 키보드 enter키를 입력해도 검색버튼 클릭한 것과 동일하게 검색 실행시키기 :heavy_check_mark:
