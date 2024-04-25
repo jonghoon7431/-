@@ -97,7 +97,7 @@ function filter() {
   for (let i = 0; i < card.length; i++) {
     let title = document.getElementsByClassName("title");
     if (title[i].innerHTML.toLowerCase().indexOf(search) != -1) {
-      card[i].style.display = "block";
+      card[i].style.display = "flex";
     } else {
       card[i].style.display = "none";
     }

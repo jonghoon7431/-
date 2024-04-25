@@ -10,51 +10,63 @@ body {
   background-color: black;
   color: white;
 }
+body::-webkit-scrollbar {
+  width: 0.7vw;
+  background-color: black;
+}
+body::-webkit-scrollbar-track {
+  background-color: black;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10vw;
+}
 
 .header {
   text-align: center;
-  height: 8rem;
-  line-height: 8rem;
+  height: 15vh;
+  line-height: 15vh;
   width: 100%;
   background-color: var(--red);
-  border-bottom: 1px solid white;
+  border-bottom: 0.1vw solid white;
   user-select: none;
 }
 .header h1 {
   margin: auto;
-  font-size: 3.2rem;
+  font-size: 3vw;
   text-shadow: 1px 1px 1px grey;
 }
 
 .search_area {
-  border-bottom: 1px solid white;
+  border-bottom: 0.1vw solid white;
   width: 100%;
-  height: 4.5rem;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   user-select: none;
   z-index: 1000;
 }
 
 .search_input {
-  margin: 0 2rem 0 1rem;
-  width: 12rem;
-  height: 2rem;
+  font-size: 1vw;
+  margin: 0 2vw 0 1vw;
+  width: 12vw;
+  height: 4vh;
   background-color: black;
   color: white;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 0.1vw solid white;
 }
 
 .search_area button {
-  font-size: 1rem;
-  padding: 0.1rem;
-  width: 5rem;
-  height: 2.5rem;
-  border: 1px solid white;
-  border-radius: 10px;
+  font-size: 1vw;
+  padding: 0.1vw;
+  width: 5vw;
+  height: 5vh;
+  border: 0.1vw solid white;
+  border-radius: 0.5vw;
   background-color: black;
   color: white;
   cursor: pointer;
@@ -62,18 +74,22 @@ body {
 
 .content {
   flex-wrap: wrap;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
-  margin: 2% 5%;
+  margin: 2%;
 }
 .card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  border: 1px solid white;
-  border-radius: 10px;
+  border: 0.1vw solid white;
+  border-radius: 0.5vw;
   padding: 1.5%;
   margin: 2% 1%;
-  width: 25%;
-  height: auto;
+  width: 90%;
+  height: 90%;
   font-size: 1vw;
   cursor: pointer;
 }
@@ -82,20 +98,34 @@ body {
   transition: 0.5s all;
 }
 .card img {
-  width: 100%;
-  border-radius: 10px;
+  margin: auto;
+  width: 80%;
+  border-radius: 0.5vw;
 }
 .title {
   font-size: 1.5vw;
   font-weight: bold;
 }
 .overview {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 3vw 0 2vw 0;
+  padding: 0 0.5vw;
   flex-wrap: wrap;
   width: 100%;
-  /* height: 30%; */
+  height: 20vh;
+  overflow: auto;
+  overflow-x: hidden;
   word-break: break-all;
+}
+.overview::-webkit-scrollbar {
+  width: 0.5vw;
+  background-color: black;
+}
+.overview::-webkit-scrollbar-track {
+  background-color: black;
+}
+.overview::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10vw;
 }
 
 .average_div {
@@ -105,6 +135,7 @@ body {
   justify-content: space-between;
   bottom: 20px;
   align-items: center;
+  padding: 0.5vw;
 }
 .average {
   flex-wrap: nowrap;
@@ -118,17 +149,23 @@ body {
 }
 
 .top_button {
-  font-size: 6rem;
+  background: none;
+  border: none;
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  cursor: pointer;
+}
+
+.up_button {
+  border-radius: 50%;
+  font-size: 3vw;
+  width: 5vw;
+  height: 9vh;
   background-color: var(--red);
   color: white;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 8rem;
-  padding: 5px;
-  border: 1px solid white;
-  border-radius: 50%;
-  cursor: pointer;
+  border: 0.2vw solid white;
+  padding: 10%;
 }
 
 .hide {
