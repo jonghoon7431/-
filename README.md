@@ -17,16 +17,16 @@
    - 카드 클릭시, 해당 영화 id alert 창으로 띄우기 :heavy_check_mark:
 - 영화 검색 UI 구현 :heavy_check_mark:
 - 아래 기재된 Javascript 문법 요소를 이용하여 구현 :heavy_check_mark:
-  - const와 let만을 이용한 변수 선언 필수
-  - 화살표 함수
-  - 배열 메소드
-  - DOM 제어하기
+  - const와 let만을 이용한 변수 선언 필수 :heavy_check_mark:
+  - 화살표 함수 :heavy_check_mark:
+  - 배열 메소드(2종류 이상 사용)
+  - DOM 제어하기 :heavy_check_mark:
 
 
  
 2. 선택 요구 사항
-- css 요소 (flex,grid)  :heavy_check_mark: 
-- 웹사이트 랜딩 또는 새로고침 후 검색 입력란에 커서 자동 위치시키기
+- css 요소 (flex,grid)  :heavy_check_mark:  
+- 웹사이트 랜딩 또는 새로고침 후 검색 입력란에 커서 자동 위치시키기 :heavy_check_mark:
 - 대소문자 관계없이 검색 가능하게 하기 :heavy_check_mark:
 - 키보드 enter키를 입력해도 검색버튼 클릭한 것과 동일하게 검색 실행시키기 :heavy_check_mark:
 
