@@ -160,8 +160,8 @@ body::-webkit-scrollbar-thumb {
 .up_button {
   border-radius: 50%;
   font-size: 3vw;
-  width: 5vw;
-  height: 9vh;
+  width: 5rem;
+  height: 5rem;
   background-color: var(--red);
   color: white;
   border: 0.2vw solid white;

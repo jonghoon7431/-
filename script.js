@@ -2,7 +2,8 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NWU4MzRhY2Q0Mjk5MDk0MzI4ZmMxZTUyZjVhYTBmMyIsInN1YiI6IjY2MjZmZDE2MmUyYjJjMDE2MzY3MjA4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wl8aFUtCjzsNdhNXgwn4Aw1kdLas3x17gn0YiTIfoNU",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NWU4MzRhY2Q0Mjk5MDk0MzI4ZmMxZTUyZjVhYTBmMyIsInN1YiI6IjY2MjZmZDE2MmUyYjJjMDE2MzY3MjA4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wl8aFUtCjzsNdhNXgwn4Aw1kdLas3x17gn0YiTIfoNU",
   },
 };
 
@@ -12,11 +13,17 @@ const searchButton = document.querySelector(".search_button");
 const title = document.querySelector(".title");
 const card = document.querySelector(".card");
 
+function getMovieId() {
+  let dv = event.currentTarget;
+  let spanId = dv.querySelector("span").textContent;
+  alert(`영화 id: ${spanId}`);
+}
+
 async function getCard() {
   const response = await fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options);
 
   const responseJson = await response.json();
-  const results = await [responseJson][0].results;
+  const results = [responseJson][0].results;
 
   try {
     results.forEach((a) => {
@@ -49,12 +56,6 @@ async function getCard() {
 }
 getCard();
 
-function getMovieId() {
-  let dv = event.currentTarget;
-  let spanId = dv.querySelector("span").textContent;
-  alert(`영화 id: ${spanId}`);
-}
-
 //topbutton
 window.onload = function () {
   const topButton = document.querySelector(".top_button");
@@ -73,23 +74,11 @@ window.onload = function () {
 };
 
 //엔터키입력, 버튼 검색
-window.enterKeySearch = () => {
-  if (window.event.keyCode == 13) {
-    filter();
-    noValue();
-  }
-};
-searchButton.addEventListener("click", () => {
-  filter();
-  noValue();
-});
-
 function noValue() {
   if (searchInput.value == "") {
     alert("검색어를 입력해주세요");
   }
 }
-
 function filter() {
   let search = searchInput.value.toLowerCase();
   let card = document.getElementsByClassName("card");
@@ -103,3 +92,14 @@ function filter() {
     }
   }
 }
+
+window.enterKeySearch = () => {
+  if (window.event.keyCode == 13) {
+    filter();
+    noValue();
+  }
+};
+searchButton.addEventListener("click", () => {
+  filter();
+  noValue();
+});
